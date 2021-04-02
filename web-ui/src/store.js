@@ -38,6 +38,10 @@ function restore_session() {
     return null;
   }
 }
+
+function remove_session() {
+  localStorage.removeItem("session");
+}
  
 function session(state = restore_session(), action) {
   switch (action.type) {
@@ -45,6 +49,7 @@ function session(state = restore_session(), action) {
       save_session(action.data);
       return action.data;
     case 'session/clear':
+      remove_session();		  
       return null;
     default:
       return state;
