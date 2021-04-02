@@ -10,6 +10,8 @@ defmodule CookingAppWeb.SessionController do
         username: user.username,
         token: Phoenix.Token.sign(conn, "user_id", user.id),
       }
+
+      
       conn
       |> put_resp_header("content-type", "application/json; charset=UTF-8")
       |> send_resp(:created, Jason.encode!(%{session: sess}))

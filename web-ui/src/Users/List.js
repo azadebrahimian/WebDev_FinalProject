@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom';
 function UsersList({users}) {
   let rows = users.map((user) => (
     <tr key={user.id}>
-      <td>{user.name}</td>
+      <td>{user.first_name} {user.last_name}</td>
+      <td>{user.username}</td>
+      <td><button onClick={() => window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")}>Send Request</button></td>
     </tr>
   ));
 
@@ -24,7 +26,8 @@ function UsersList({users}) {
             <thead>
               <tr>
                 <th>Name</th>
-                <th>Actions</th>
+	        <th>Username</th>
+	        <th>Add Friend</th>
               </tr>
             </thead>
             <tbody>

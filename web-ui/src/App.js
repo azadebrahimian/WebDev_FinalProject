@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import { Switch, Route } from 'react-router-dom';
 import UsersNew from './Users/New';
 import UsersList from './Users/List';
@@ -13,6 +13,8 @@ function App() {
     return (
       <Container>
 	<Nav />
+	<Row>
+	<Col md={10}>
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -27,6 +29,11 @@ function App() {
 	    <ShowIngredients />
 	  </Route>
 	</Switch>
+	</Col>
+        <Col>
+	  <h4>Your Friends</h4>
+	</Col>
+	</Row>
       </Container>
     );
 }

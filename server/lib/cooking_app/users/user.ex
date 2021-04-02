@@ -8,6 +8,8 @@ defmodule CookingApp.Users.User do
     field :password_hash, :string
     field :username, :string
 
+    many_to_many :ingredients, CookingApp.Ingredients.Ingredient, join_through: CookingApp.OwnedIngredients.OwnedIngredient, on_replace: :delete
+    
     timestamps()
   end
 
