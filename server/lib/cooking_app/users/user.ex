@@ -18,6 +18,7 @@ defmodule CookingApp.Users.User do
     user
     |> cast(attrs, [:username, :first_name, :last_name])
     |> add_password_hash(attrs["password"])
+    |> unique_constraint(:username)
     |> validate_required([:username, :first_name, :last_name, :password_hash])
   end
 

@@ -22,6 +22,7 @@ defmodule CookingAppWeb do
       use Phoenix.Controller, namespace: CookingAppWeb
 
       import Plug.Conn
+      import Hw09Web.Helpers
       import CookingAppWeb.Gettext
       alias CookingAppWeb.Router.Helpers, as: Routes
     end
@@ -67,6 +68,7 @@ defmodule CookingAppWeb do
       import Phoenix.View
 
       import CookingAppWeb.ErrorHelpers
+      import Hw09Web.Helpers
       import CookingAppWeb.Gettext
       alias CookingAppWeb.Router.Helpers, as: Routes
     end
